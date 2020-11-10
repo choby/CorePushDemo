@@ -10,5 +10,6 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="FirebaseAdmin" Version="2.0.0" />
     </ItemGroup>
 </Project>
