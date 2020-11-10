@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{16B2814D-CED6-44E4-B6B3-F66725523CA2}|PushNotification">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PushNotificationDemo/Controllers/AndroidController.cs">
+    <Files>
+      <File FileName="PushNotificationDemo/Controllers/AndroidController.cs" Line="9" Column="46" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PushNotificationDemo" expanded="True">
+            <Node name="PushNotificationDemo" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AndroidController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.PushNotificationDemo PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Seekit_PushNotification/PushNotificationDemo.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
