@@ -1,8 +1,14 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CorePush.Google;
 using System.Net.Http;
 using Newtonsoft.Json;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using System;
+using FirebaseAdmin.Messaging;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,7 +42,42 @@ namespace PushNotificationDemo.Controllers
 
             FcmResponse response = await fcm.SendAsync(deviceToken, notification);
 
-            return Content($"android push result:{response.IsSuccess().ToString()}");
+            //  await fcm.SendAsync();
+
+            return Content($"android push result:");//{response.IsSuccess().ToString()}
+        }
+
+        // 新版接口
+        public async Task<IActionResult> V1()
+        {
+            var deviceId = "fQVPgfq8TZKrltAwHSB-WI:APA91bFWh5E5PKp_8fdjlkkeE7K6xjoA9CH9Dll-nJBvPwnKDcsNnH2Py5Gf5T7SMna4X0D35_tA8a32ytB29nApEei4Kx78pIsk7md6xfBh-_JffilmRZQSR179e2pc8pbZs4T78ocp";
+            var firebaseApp = FirebaseApp.Create(new AppOptions()
+            {
+                Credential = GoogleCredential.FromFile("seekit24-69d2d-firebase-adminsdk-2mq43-30c9335ed4.json"),
+            }, Guid.NewGuid().ToString());
+
+            var messaging = FirebaseMessaging.GetMessaging(firebaseApp);
+
+            var msg = new Message
+            {
+                Token = deviceId,
+                Android = new AndroidConfig
+                {
+                    Priority = Priority.High,
+                },
+                Notification = new Notification
+                {
+                    Title = "通知",
+                    Body = "安卓测试消息 🆚",
+                },
+                Data = new Dictionary<string, string> {
+                   { "sss" , "asdf" },
+                   { "sss2" , "asdf2" }
+               }
+            };
+            await messaging.SendAsync(msg);
+
+            return Content("tui wan");
         }
     }
 
